@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { DesktopComputerIcon,CubeIcon, UserIcon} from '@heroicons/react/solid'
 
 const name = "Matthew Parks"
 
@@ -8,37 +9,40 @@ export default function Layout({ children }) {
         <div>
             <Head>
             </Head>
-            <div class="rounded-lg shadow bg-base-200 drawer drawer-mobile h-screen">
-                <input id="my-drawer-2" type="checkbox" class="drawer-toggle"/> 
-                <div class="flex flex-col items-center justify-center drawer-content">
-                    <label for="my-drawer-2" class="mb-4 btn btn-primary drawer-button lg:hidden">open menu</label> 
-                    <div class="hidden text-xs text-center lg:block">
-                        <main>{children}</main>
-                    </div> 
-                    <div class="text-xs text-center lg:hidden">
-                        <main>{children}</main>
-                    </div>
-                </div> 
-                <div class="drawer-side">
-                    <label for="my-drawer-2" class="drawer-overlay"></label> 
-                    <div class="menu flex flex-col p-4 overflow-y-auto w-60 h-full bg-base-100 text-base-content">
-                        <div class="avatar flex justify-center">
-                            <div class="rounded-full w-16 h-16 justify-center">
-                                <img class="object-fill w-full" src="http://daisyui.com/tailwind-css-component-profile-1@94w.png"/>
-                            </div>
-                        </div> 
-                        <div class="flex justify-center">
-                            <p>{name}</p>
-                        </div>
-                        <div class="divider"></div> 
-                        <ul class="flex flex-col justify-right">
-                            <li><Link href="/"><a>Dashboard</a></Link></li>
-                            <li><Link href="/income"><a>Income</a></Link></li>
-                            <li><Link href="/expenses"><a>Expenses</a></Link></li>
-                            <li><Link href="/assets"><a>Assets</a></Link></li>
-                        </ul>
-                            <p class="text-gray-50">Mr. Krabs V0.0.1</p>
-                    </div>
+            <div class="relative min-h-screen md:flex">
+                {/*This is a comment*/}
+                <div class="bg-gray-800 text-gray-100">
+                    <UserIcon className="block w-8 h-8 text-white"/>
+                    <a href="#" class="block p-4 text-white font-bold"></a>
+                </div>
+
+                <div class="bg-blue-800 text-blue-100 w-52
+                 space-y-6 py-7 px-2 absolute inset-y-0
+                  left-0 transform -translate-x-full transition duration-200 ease-in-out">
+                    <Link href="/">
+                        <a class="text-white flex items-center space-x-2 px-4">
+                            <CubeIcon className="w-8 h-8"/>
+                            <span class="text-2xl font-extrabold">Mr. Krabs</span>
+                        </a>
+                    </Link>
+                    <nav>
+                        <Link href="/">
+                            <a class="block py-2.5 px-4 rounded hover:bg-blue-900">Dashboard</a>
+                        </Link>
+                        <Link href="/">
+                            <a class="block py-2.5 px-4 rounded hover:bg-blue-900">Assets</a>
+                        </Link>
+                        <Link href="/">
+                            <a class="block py-2.5 px-4 rounded hover:bg-blue-900">Income</a>
+                        </Link>
+                        <Link href="/">
+                            <a class="block py-2.5 px-4 rounded hover:bg-blue-900">Spending</a>
+                        </Link>
+                    </nav>
+                </div>
+
+                <div class="p-10 text-2xl font-bold flex-1">
+                    {children}
                 </div>
             </div>
         </div>
