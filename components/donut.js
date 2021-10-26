@@ -8,7 +8,7 @@ const data = {
     'Yellow'
   ],
   datasets: [{
-    data: [300, 50, 100],
+    data: [400, 100, 100],
     backgroundColor: [
       '#FF6384',
       '#36A2EB',
@@ -25,12 +25,10 @@ const data = {
 
 export default function Donut() {
   return (
-    <div>
-      <h2>Doughnut Example</h2>
       <Doughnut
         data={data}
-        width={400}
-        height={400}
-      />
-    </div>);
+        width={600}
+        height={600}
+        options={{ maintainAspectRatio: false }}
+      />);
 }

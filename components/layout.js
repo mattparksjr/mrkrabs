@@ -9,11 +9,12 @@ export default function Layout({ children }) {
     return (
         <div>
             <Head>
+                <title>Mr. Krabs</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
             <div class="bg-blue-800 text-blue-100 lg:w-1/6
                   py-7 px-2 fixed inset-y-0
-                  left-0 transform  transition duration-200 ease-in-out">
+                  left-0 transform transition duration-200 ease-in-out">
                 <Link href="/">
                     <a class="text-white flex items-center space-x-2 px-4">
                         <CubeIcon className="w-8 h-8" />
@@ -23,16 +24,16 @@ export default function Layout({ children }) {
                 <div class="h-2 rounded bg-gray-300 w-full space-x-2 my-4"/>
                 <nav>
                     <Link href="/">
-                        <a class="block py-2.5 px-4 rounded hover:bg-blue-900">Dashboard</a>
+                        <a class="block py-2.5 lg:text-2xl px-4 rounded hover:bg-blue-900">Dashboard</a>
                     </Link>
                     <Link href="/">
-                        <a class="block py-2.5 px-4 rounded hover:bg-blue-900">Assets</a>
+                        <a class="block py-2.5 lg:text-2xl px-4 rounded hover:bg-blue-900">Assets</a>
                     </Link>
                     <Link href="/">
-                        <a class="block py-2.5 px-4 rounded hover:bg-blue-900">Income</a>
+                        <a class="block py-2.5 lg:text-2xl px-4 rounded hover:bg-blue-900">Income</a>
                     </Link>
                     <Link href="/">
-                        <a class="block py-2.5 px-4 rounded hover:bg-blue-900">Spending</a>
+                        <a class="block py-2.5 lg:text-2xl px-4 rounded hover:bg-blue-900">Spending</a>
                     </Link>
                 </nav>
                 <div class="fixed left-0 bottom-0 w-full">

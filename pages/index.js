@@ -2,14 +2,54 @@ import Link from 'next/link'
 import Donut from '../components/donut'
 import Layout from '../components/layout'
 
+
+/* Using Express
+const express = require('express');
+const app = express();
+app.use(express.json());
+const { Configuration, PlaidApi, PlaidEnvironments } = require('plaid');
+const configuration = new Configuration({
+  basePath: PlaidEnvironments[process.env.PLAID_ENV],
+  baseOptions: {
+    headers: {
+      'PLAID-CLIENT-ID': process.env.PLAID_CLIENT_ID,
+      'PLAID-SECRET': process.env.PLAID_SECRET,
+    },
+  },
+});
+const client = new PlaidApi(configuration);
+app.post('/api/create_link_token', async function (request, response) {
+  // Get the client_user_id by searching for the current user
+  const user = await User.find(...);
+  const clientUserId = user.id;
+  const request = {
+    user: {
+      // This should correspond to a unique id for the current user.
+      client_user_id: clientUserId,
+    },
+    client_name: 'Plaid Test App',
+    products: [Products.Auth],
+    language: 'en',
+    webhook: 'https://webhook.example.com',
+    country_codes: [CountryCode.Us],
+  };
+  try {
+    const createTokenResponse = await client.linkTokenCreate(request);
+    response.json(createTokenResponse.data);
+  } catch (error) {
+    // handle error
+  }
+});*/
+
 export default function Home() {
   return (
     <Layout>
       <main>
+        <h1 class="text-4xl text-bold text-blue-600">Dashboard</h1>
         <div class="h-128 w-128">
-        <Donut/>
+          <Donut/>
         </div>
-        <h1 className="title">
+        <h1 class="title">
           Read{' '}
           <Link href="/income">
             <a>this page!</a>
